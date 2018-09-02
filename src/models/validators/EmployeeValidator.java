@@ -24,7 +24,7 @@ public class EmployeeValidator {
 
         String password_error = _validatePassword(e.getPassword(), password_check_flag);
         if(!password_error.equals("")) {
-            errors.add(name_error);
+            errors.add(password_error);
         }
 
         return errors;
@@ -59,7 +59,7 @@ public class EmployeeValidator {
 
     private static String _validatePassword(String password, Boolean password_check_flag) {
         if(password_check_flag && (password == null || password.equals(""))) {
-            return "パスワードを入力してください";
+            return "パスワードを入力してください。";
         }
         return "";
     }
